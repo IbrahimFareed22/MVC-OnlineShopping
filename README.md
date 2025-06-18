@@ -92,8 +92,8 @@ We welcome contributions! If you’d like to improve or add new features to this
 For any questions or further assistance, feel free to open an issue or contact me directly at:
 
 - [Email] (ibrahimfareedmustafa@gmail.com)
-- [GitHub](https://github.com/IbrahimFareed22)
--  [LinkedIn](https://linkedin.com/in/ibrahim-fareed-181127243)
+- [GitHub] (https://github.com/IbrahimFareed22)
+-  [LinkedIn] (https://linkedin.com/in/ibrahim-fareed-181127243)
 
 ---
 
