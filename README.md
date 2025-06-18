@@ -86,16 +86,14 @@ We welcome contributions! If you’d like to improve or add new features to this
 - Include descriptive commit messages for clarity.
 - Ensure all code changes are tested and pass the existing test cases.
 
-## License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
 For any questions or further assistance, feel free to open an issue or contact me directly at:
 
-- **Email**: mishrarabin92@gmail.com
-- **GitHub**: [@Rabin-Mishra](https://github.com/Rabin-Mishra/ASP.NETCORE_MVC_E-COMMERCE.git)
+- [Email] (ibrahimfareedmustafa@gmail.com)
+- [GitHub](https://github.com/IbrahimFareed22)
+-  [LinkedIn](https://linkedin.com/in/ibrahim-fareed-181127243)
 
 ---
 
