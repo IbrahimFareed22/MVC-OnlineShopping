@@ -1,0 +1,57 @@
+﻿@model OnlineShopping.Models.User
+
+@{
+    ViewData["Title"] = "Create User";
+}
+
+<h1>Create New User</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow-sm p-4">
+            <h4 class="card-title mb-4">User Information</h4>
+
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" type="password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Role" class="control-label"></label>
+                    <select asp-for="Role" class="form-control">
+                        <option value="">-- Select Role --</option>
+                        <option value="Admin">Admin</option>
+                        <option value="User">User</option>
+                    </select>
+                    <span asp-validation-for="Role" class="text-danger"></span>
+                </div>
+
+                <div class="form-group form-check mb-4">
+                    <input class="form-check-input" asp-for="Status" id="Status" />
+                    <label class="form-check-label" for="Status">@Html.DisplayNameFor(model => model.Status)</label>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Create User</button>
+                    <a asp-action="Index" class="btn btn-secondary ml-2">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

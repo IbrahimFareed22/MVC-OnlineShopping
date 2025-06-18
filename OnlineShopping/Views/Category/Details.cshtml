@@ -1,0 +1,22 @@
+﻿@model OnlineShopping.Models.Category
+
+@{
+    ViewData["Title"] = "Category Details";
+}
+
+<h1>Category Details</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <dl class="row">
+            <dt class="col-sm-3">Name</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Name)</dd>
+        </dl>
+
+        <div class="form-group">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary btn-block">Edit</a>
+            <a asp-action="Index" class="btn btn-outline-secondary btn-block mt-2">Back to List</a>
+        </div>
+    </div>
+</div>

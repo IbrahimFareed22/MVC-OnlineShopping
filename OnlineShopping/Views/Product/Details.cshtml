@@ -1,0 +1,65 @@
+﻿@model OnlineShopping.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Product Details</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <img src="~/ProductImages/@Model.ProductIcon" alt="Product Image" class="card-img-top" style="max-height: 300px; object-fit: contain;" />
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.Description</p>
+                <p class="card-text">Price: Rs. @Model.Price</p>
+                <p class="card-text">Category: @Model.Category.Name</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <dl class="row">
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.ProductIcon)
+            </dt>
+            <dd class="col-sm-8">
+                <img src="~/ProductImages/@Model.ProductIcon" alt="Product Image" style="max-width: 100px;" />
+            </dd>
+
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="ProductDashboard" class="btn btn-secondary">Back to List</a>
+    <a asp-action="BuyProduct" asp-route-id="@Model.Id" class="btn btn-success">Buy Product</a>
+</div>

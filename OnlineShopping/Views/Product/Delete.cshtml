@@ -1,0 +1,31 @@
+﻿@model OnlineShopping.Models.Product
+
+@{
+    ViewData["Title"] = "Delete Product";
+}
+
+<h1 class="text-danger">Delete Product</h1>
+
+<h3 class="text-warning">Are you sure you want to delete this product?</h3>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card border-danger mb-3">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.Description</p>
+                <p class="card-text">Price: Rs. @Model.Price</p>
+                <p class="card-text">
+                    <img src="~/ProductImages/@Model.ProductIcon" alt="Product Image" style="max-width: 150px;" />
+                </p>
+                <p class="card-text">Category: @Model.Category.Name</p>
+            </div>
+        </div>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">Confirm Delete</button>
+            <a asp-action="Index" class="btn btn-secondary ml-2">Cancel</a>
+        </form>
+    </div>
+</div>

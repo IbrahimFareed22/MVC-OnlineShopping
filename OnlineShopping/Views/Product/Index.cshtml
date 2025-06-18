@@ -1,0 +1,41 @@
+﻿@model IEnumerable<OnlineShopping.Models.Product>
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1>Product Details</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-info" style="border-style:dashed;">Create New</a>
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="/ProductImages/@item.ProductIcon" class="card-img-top" style="height: 200px; object-fit: cover;" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">@item.Description</p>
+                    <p class="card-text">Price: Rs. @item.Price</p>
+                    <p class="card-text">@item.Category.Name</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+
+                    <form asp-controller="Cart" asp-action="Add" method="post" class="d-inline">
+                        <input type="hidden" name="productId" value="@item.Id" />
+                        <input type="hidden" name="productName" value="@item.Title" />
+                        <input type="hidden" name="price" value="@item.Price" />
+                        <input type="hidden" name="quantity" value="1" />
+                        <button type="submit" class="btn btn-success">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>
